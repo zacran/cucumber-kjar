@@ -54,7 +54,7 @@ public class KimchiService {
 	protected ObjectMapper mapper;
 
 	@PostConstruct
-	private void initializeRulesEngine() {
+	protected void initializeRulesEngine() {
 		File defaultRules = new File(defaultRulesFile);
 		rulesEngine.compileAndLoadRules(defaultRules);
 	}

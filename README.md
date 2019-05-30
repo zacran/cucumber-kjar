@@ -8,17 +8,17 @@ Building and testing rules on the fly with Drools and Cucumber
 ## About
 
 Tech used:
-  - `Cucumber`
-  - `Drools`
-  - `Gradle`
-  - `SpringBoot`
-  - `Swagger`
+-   `Cucumber`
+-   `Drools`
+-   `Gradle`
+-   `SpringBoot`
+-   `Swagger`
 
 Demo application showing how to:
-  - Use [`Drools`](https://github.com/kiegroup/drools) to build rules at runtime
-  - Use [`Cucumber`](https://github.com/cucumber/cucumber-jvm) to test these rules at runtime
-  - Provide an endpoint to update rules and validate them on the fly
-  - Install `MemoryKieModules` as KJARs to your m2 repository
+-   Use [`Drools`](https://github.com/kiegroup/drools) to build rules at runtime
+-   Use [`Cucumber`](https://github.com/cucumber/cucumber-jvm) to test these rules at runtime
+-   Provide an endpoint to update rules and validate them on the fly
+-   Install `MemoryKieModules` as KJARs to your m2 repository
 
 ## Getting Started
 
