@@ -3,7 +3,7 @@ Building and testing rules on the fly with Drools and Cucumber
 
 [![Build Status](https://travis-ci.org/zacran/project-kimchi.svg?branch=master)](https://travis-ci.org/zacran/project-kimchi.svg?branch=master)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/zacran/project-kimchi.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/zacran/project-kimchi/alerts/)
-[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/zacran/project-kimchi.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/zacran/project-kimchi/context:java)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/88daca5d5de240e89aa2011bb1b2bdc3)](https://www.codacy.com/app/zachary.cranfill/project-kimchi?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=zacran/project-kimchi&amp;utm_campaign=Badge_Grade)
 
 ## About:
 
