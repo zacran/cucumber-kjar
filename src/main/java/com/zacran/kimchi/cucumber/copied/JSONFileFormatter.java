@@ -244,12 +244,9 @@ public final class JSONFileFormatter implements EventListener {
 
 	private boolean isFirstStepAfterBackground(PickleStepTestStep testStep) {
 		TestSourcesModel.AstNode astNode = testSources.getAstNode(currentFeatureFile, testStep.getStepLine());
-		if (astNode != null && currentElementMap != currentTestCaseMap && !TestSourcesModel.isBackgroundStep(astNode)) {
-			return true;
 
-		}
-		return false;
-
+		return (astNode != null && !currentElementMap.equals(currentTestCaseMap)
+				&& !TestSourcesModel.isBackgroundStep(astNode));
 	}
 
 	private Map<String, Object> createTestStep(PickleStepTestStep testStep) {
