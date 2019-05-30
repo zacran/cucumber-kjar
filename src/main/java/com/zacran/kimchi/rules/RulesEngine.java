@@ -26,17 +26,17 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class RulesEngine {
 
-	static final String GROUP = "com.zacran";
-	static final String ARTIFACT = "kimchi-rules";
+	private static final String GROUP = "com.zacran";
+	private static final String ARTIFACT = "kimchi-rules";
 
-	StatelessKieSession currentKieSession;
-	KieBuilder kieBuilder;
+	private StatelessKieSession currentKieSession;
+	private KieBuilder kieBuilder;
 
-	ReleaseId currentReleaseId;
-	KieServices kieServices = KieServices.Factory.get();
+	private ReleaseId currentReleaseId;
+	private KieServices kieServices = KieServices.Factory.get();
 
 	// Provides RulesEngine as a lazy-loading singleton
-	static class InstanceHolder {
+	private static class InstanceHolder {
 		static final RulesEngine instance = new RulesEngine();
 	}
 
@@ -93,7 +93,7 @@ public class RulesEngine {
 		currentKieSession.execute(createBatchExecutionCommand(kimchi));
 	}
 
-	BatchExecutionCommand createBatchExecutionCommand(Kimchi kimchi) {
+	private BatchExecutionCommand createBatchExecutionCommand(Kimchi kimchi) {
 		KieCommands kieCommands = kieServices.getCommands();
 
 		List<Command<?>> commands = new ArrayList<>();

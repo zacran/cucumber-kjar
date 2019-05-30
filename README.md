@@ -5,22 +5,22 @@ Building and testing rules on the fly with Drools and Cucumber
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/zacran/project-kimchi.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/zacran/project-kimchi/alerts/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/88daca5d5de240e89aa2011bb1b2bdc3)](https://www.codacy.com/app/zachary.cranfill/project-kimchi?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=zacran/project-kimchi&amp;utm_campaign=Badge_Grade)
 
-## About:
+## About
 
 Tech used:
-- `Cucumber`
-- `Drools`
-- `Gradle`
-- `SpringBoot`
-- `Swagger`
+  - `Cucumber`
+  - `Drools`
+  - `Gradle`
+  - `SpringBoot`
+  - `Swagger`
 
 Demo application showing how to:
-- Use [`Drools`](https://github.com/kiegroup/drools) to build rules at runtime
-- Use [`Cucumber`](https://github.com/cucumber/cucumber-jvm) to test these rules at runtime
-- Provide an endpoint to update rules and validate them on the fly
-- Install `MemoryKieModules` as KJARs to your m2 repository
+  - Use [`Drools`](https://github.com/kiegroup/drools) to build rules at runtime
+  - Use [`Cucumber`](https://github.com/cucumber/cucumber-jvm) to test these rules at runtime
+  - Provide an endpoint to update rules and validate them on the fly
+  - Install `MemoryKieModules` as KJARs to your m2 repository
 
-## Getting Started:
+## Getting Started
 
 Building:
 ```shell
@@ -34,7 +34,7 @@ gradle bootRun
 
 Once the service is running, you can go to [`localhost:8080/swagger-ui.html`](localhost:8080/swagger-ui.html) to see available REST options
 
-## How the rules are compiled and loaded:
+## How the rules are compiled and loaded
 Rules are compiled into a MemoryKieModule:
 ```java
 void compileRules(File... files) {
@@ -77,7 +77,7 @@ BatchExecutionCommand createBatchExecutionCommand(Kimchi kimchi) {
 }
 ```
 
-## How the Cucumber tests are run at runtime:
+## How the Cucumber tests are run at runtime
 This project contains a custom Cucumber plugin, `JSONFileFormatter`, based on Cucumber's `JSONFormatter`, to spool test results to a file, which is then read and available in memory. 
 
 The custom plugin is passed in as a Cucumber argument by providing the full classpath:
@@ -127,7 +127,7 @@ for (CucumberFeature feature : loadedCucumberFeatures) {
 
 Say you want to update rules in your application without having to worry about syncing with development cycle or releases:
 
-Existing rule:
+Existing rule
 ```java
 rule "Kimchi tastes bad if it is older than 90 days old"
     when
@@ -137,7 +137,7 @@ rule "Kimchi tastes bad if it is older than 90 days old"
 end
 ```
 
-New rule:
+New rule
 ```java
 rule "Kimchi tastes bad if it is older than 140 days old"
     when
@@ -154,7 +154,7 @@ You can upload this via the `/kimchi/upload` endpoint. In order to deploy these 
 To test your new rule, you can update the Cucumber tests and upload them through the same `/kimchi/upload` endpoint.
 
 Existing test:
-```
+```Gherkin
 Scenario: Old Kimchi
     Given I have the following kimchi:
         | Ingredients            | Age |
@@ -164,7 +164,7 @@ Scenario: Old Kimchi
 ```
 
 New tests:
-```
+```Gherkin
 Scenario: Kimchi That's A Bit Old But Still Good
     Given I have the following kimchi:
         | Ingredients            | Age |

@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class PomGenerator {
 
-	static String getPomString(ReleaseId releaseId) {
+	private static String getPomString(ReleaseId releaseId) {
 		String pom = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 				+ "<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\""
 				+ "xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\n"

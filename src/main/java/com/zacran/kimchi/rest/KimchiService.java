@@ -27,39 +27,39 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class KimchiService {
 
-	final String CUCUMBER_FILE_NAME = "kimchi-tests.feature";
-	final String CUCUMBER_FILE_EXTENSION = ".feature";
-	final String RULES_FILE_NAME = "kimchi-rules.drl";
-	final String RULES_FILE_EXTENSION = ".drl";
+	public final String CUCUMBER_FILE_NAME = "kimchi-tests.feature";
+	public final String CUCUMBER_FILE_EXTENSION = ".feature";
+	public final String RULES_FILE_NAME = "kimchi-rules.drl";
+	public final String RULES_FILE_EXTENSION = ".drl";
 
 	@Value("${default.rules.file:" + KimchiConstants.DEFUALT_RULES_FILE + "}")
-	String defaultRulesFile;
+	public String defaultRulesFile;
 
 	@Value("${default.test.file:" + KimchiConstants.DEFUALT_TEST_FILE + "}")
-	String defaultTestFile;
+	public String defaultTestFile;
 
 	@Value("${default.test.output.file:" + KimchiConstants.DEFAULT_OUTPUT_FILE + "}")
-	String defaultTestOutputFile;
+	public String defaultTestOutputFile;
 
 	@Value("${uploaded.file.dir:" + KimchiConstants.DEFAULT_UPLOADED_DIR + "}")
-	String uploadedDir;
+	public String uploadedDir;
 
 	@Autowired
-	RulesEngine rulesEngine;
+	public RulesEngine rulesEngine;
 
 	@Autowired
-	CucumberEngine cucumberEngine;
+	public CucumberEngine cucumberEngine;
 
 	@Autowired
-	ObjectMapper mapper;
+	public ObjectMapper mapper;
 
 	@PostConstruct
-	void initializeRulesEngine() {
+	private void initializeRulesEngine() {
 		File defaultRules = new File(defaultRulesFile);
 		rulesEngine.compileAndLoadRules(defaultRules);
 	}
 
-	String[] getCucumberArgs(String featureFileLocation) {
+	private String[] getCucumberArgs(String featureFileLocation) {
 		return new String[] { "-m", "--strict", "--plugin", "com.zacran.kimchi.cucumber.copied.JSONFileFormatter",
 				"--plugin", "null_summary", "--glue", "com.zacran.kimchi.cucumber", featureFileLocation };
 	}
@@ -138,7 +138,7 @@ public class KimchiService {
 		return rulesTestProfile;
 	}
 
-	List<Map<String, Object>> getTestOutput() {
+	public List<Map<String, Object>> getTestOutput() {
 		File testOutputFile = new File(defaultTestOutputFile);
 		if (testOutputFile.exists()) {
 			try {

@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class KimchiController {
 
 	@Autowired
-	KimchiService service;
+	private KimchiService service;
 
 	@PostMapping("/upload")
 	public void uploadFile(@RequestParam("uploadedFile") MultipartFile uploadedFile) {
