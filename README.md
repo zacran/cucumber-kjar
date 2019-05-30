@@ -1,6 +1,10 @@
 # Project Kimchi
 Building and testing rules on the fly with Drools and Cucumber
 
+[![Build Status](https://travis-ci.org/zacran/project-kimchi.svg?branch=master)](https://travis-ci.org/zacran/project-kimchi.svg?branch=master)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/zacran/project-kimchi.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/zacran/project-kimchi/alerts/)
+[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/zacran/project-kimchi.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/zacran/project-kimchi/context:java)
+
 ## About:
 
 Tech used:
