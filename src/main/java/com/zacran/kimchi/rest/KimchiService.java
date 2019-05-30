@@ -27,31 +27,31 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class KimchiService {
 
-	public final String CUCUMBER_FILE_NAME = "kimchi-tests.feature";
-	public final String CUCUMBER_FILE_EXTENSION = ".feature";
-	public final String RULES_FILE_NAME = "kimchi-rules.drl";
-	public final String RULES_FILE_EXTENSION = ".drl";
+	protected final String CUCUMBER_FILE_NAME = "kimchi-tests.feature";
+	protected final String CUCUMBER_FILE_EXTENSION = ".feature";
+	protected final String RULES_FILE_NAME = "kimchi-rules.drl";
+	protected final String RULES_FILE_EXTENSION = ".drl";
 
 	@Value("${default.rules.file:" + KimchiConstants.DEFUALT_RULES_FILE + "}")
-	public String defaultRulesFile;
+	protected String defaultRulesFile;
 
 	@Value("${default.test.file:" + KimchiConstants.DEFUALT_TEST_FILE + "}")
-	public String defaultTestFile;
+	protected String defaultTestFile;
 
 	@Value("${default.test.output.file:" + KimchiConstants.DEFAULT_OUTPUT_FILE + "}")
-	public String defaultTestOutputFile;
+	protected String defaultTestOutputFile;
 
 	@Value("${uploaded.file.dir:" + KimchiConstants.DEFAULT_UPLOADED_DIR + "}")
-	public String uploadedDir;
+	protected String uploadedDir;
 
 	@Autowired
-	public RulesEngine rulesEngine;
+	protected RulesEngine rulesEngine;
 
 	@Autowired
-	public CucumberEngine cucumberEngine;
+	protected CucumberEngine cucumberEngine;
 
 	@Autowired
-	public ObjectMapper mapper;
+	protected ObjectMapper mapper;
 
 	@PostConstruct
 	private void initializeRulesEngine() {
@@ -138,7 +138,7 @@ public class KimchiService {
 		return rulesTestProfile;
 	}
 
-	public List<Map<String, Object>> getTestOutput() {
+	protected List<Map<String, Object>> getTestOutput() {
 		File testOutputFile = new File(defaultTestOutputFile);
 		if (testOutputFile.exists()) {
 			try {
