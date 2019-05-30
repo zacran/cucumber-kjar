@@ -3,7 +3,6 @@
 /.gradle/
 /.settings/
 /.vscode/
-/gradle/
 /.sts4-cache/
 .project
 .classpath
