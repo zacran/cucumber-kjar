@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Kimchi {
 
-	List<String> ingredients;
-	int age;
-	KimchiRating rating;
+	public List<String> ingredients;
+	public int age;
+	public KimchiRating rating;
 
 }

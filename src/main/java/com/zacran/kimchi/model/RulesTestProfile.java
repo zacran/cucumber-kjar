@@ -10,9 +10,9 @@ import lombok.Data;
 @Builder
 public class RulesTestProfile {
 
-	Boolean testPassed;
-	List<Map<String, Object>> testOutput;
-	String testRunPerformance;
-	String rulesCreationPerformance;
+	public Boolean testPassed;
+	public List<Map<String, Object>> testOutput;
+	public String testRunPerformance;
+	public String rulesCreationPerformance;
 
 }

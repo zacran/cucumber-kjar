@@ -21,9 +21,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CucumberStepDefinitions {
 
-	RulesEngine rulesEngine;
-	Kimchi kimchi;
-	KimchiRating kimchiRating;
+	private RulesEngine rulesEngine;
+	private Kimchi kimchi;
+	private KimchiRating kimchiRating;
 
 	@Before
 	public void setup() {
@@ -32,7 +32,7 @@ public class CucumberStepDefinitions {
 	}
 
 	@Given("I have the following kimchi:")
-	public void i_have_the_following_ingredients(DataTable dataTable) {
+	public void iHaveTheFollowingIngredients(DataTable dataTable) {
 		List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
 		for (int i = 0; i < rows.size(); i++) {
 			Map<String, String> row = rows.get(i);
@@ -46,23 +46,23 @@ public class CucumberStepDefinitions {
 	}
 
 	@When("I attempt to make Kimchi")
-	public void i_attempt_to_make_Kimchi() {
+	public void iAttemptToMakeKimchi() {
 		rulesEngine.runRules(kimchi);
 		kimchiRating = kimchi.getRating();
 	}
 
 	@Then("The Kimchi will taste great!")
-	public void the_Kimchi_will_taste_great() {
+	public void theKimchiWillTasteGreat() {
 		assertEquals("Expected kimchi to taste great but it doesn't!", KimchiRating.TASTES_GREAT, kimchiRating);
 	}
 
 	@Then("It will not be Kimchi!")
-	public void it_will_not_be_Kimchi() {
+	public void itWillNotBeKimchi() {
 		assertEquals("Expected this to not be kimchi but it is!", KimchiRating.NOT_KIMCHI, kimchiRating);
 	}
 
 	@Then("The Kimchi will not taste great.")
-	public void the_Kimchi_will_not_taste_great() {
+	public void theKimchiWillNotTasteGreat() {
 		assertEquals("Expected kimchi to not taste good but it does!", KimchiRating.TASTES_BAD, kimchiRating);
 	}
 }

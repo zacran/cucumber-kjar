@@ -25,7 +25,7 @@ public class RulesResourceAdaptor {
 		return processResource(rulesResource, file.getName());
 	}
 
-	static Resource processResource(Resource rulesResource, String resourceName) {
+	private static Resource processResource(Resource rulesResource, String resourceName) {
 		ResourceType resourceType = ResourceType.determineResourceType(resourceName);
 		if (resourceType == null) {
 			return null;

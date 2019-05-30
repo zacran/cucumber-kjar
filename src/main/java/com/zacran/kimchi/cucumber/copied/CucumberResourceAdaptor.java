@@ -10,7 +10,7 @@ import cucumber.runtime.io.Resource;
 */
 public class CucumberResourceAdaptor implements Resource {
 
-	org.springframework.core.io.Resource springResource;
+	private org.springframework.core.io.Resource springResource;
 
 	public CucumberResourceAdaptor(org.springframework.core.io.Resource springResource) {
 		this.springResource = springResource;

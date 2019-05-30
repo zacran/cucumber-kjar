@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 import com.zacran.kimchi.config.KimchiConstants;
 import com.zacran.kimchi.cucumber.copied.CucumberResourceLoader;
 
-
 import cucumber.api.StepDefinitionReporter;
 import cucumber.api.event.TestRunFinished;
 import cucumber.api.event.TestRunStarted;
@@ -41,19 +40,14 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CucumberEngine {
 
-	ClassLoader classLoader;
-	ResourceLoader resourceLoader;
-	ClassFinder classFinder;
-	RuntimeOptions runtimeOptions;
+	private ClassLoader classLoader;
+	private ResourceLoader resourceLoader;
+	private ClassFinder classFinder;
 
-	boolean resourcesLoaded = false;
-
-	Runtime runtime;
-
-	static CucumberEngine instance;
+	private boolean resourcesLoaded = false;
 
 	// Provides CucumberEngine as a lazy-loading singleton
-	static class InstanceHolder {
+	private static class InstanceHolder {
 		static final CucumberEngine instance = new CucumberEngine();
 	}
 
@@ -61,7 +55,7 @@ public class CucumberEngine {
 		return InstanceHolder.instance;
 	}
 
-	void loadResources() {
+	private void loadResources() {
 		classLoader = Thread.currentThread().getContextClassLoader();
 
 		boolean isArtifact = CucumberEngine.class.getResource("CucumberEngine.class").toString().contains("jar:");
@@ -82,7 +76,7 @@ public class CucumberEngine {
 			loadResources();
 		}
 
-		runtimeOptions = new RuntimeOptions(new ArrayList<String>(Arrays.asList(cucumberArgs)));
+		RuntimeOptions runtimeOptions = new RuntimeOptions(new ArrayList<String>(Arrays.asList(cucumberArgs)));
 
 		final FeatureLoader featureLoader = new FeatureLoader(resourceLoader);
 		FeaturePathFeatureSupplier featureSupplier = new FeaturePathFeatureSupplier(featureLoader, runtimeOptions);
@@ -102,7 +96,7 @@ public class CucumberEngine {
 		ExitStatus exitStatus = new ExitStatus(runtimeOptions);
 		exitStatus.setEventPublisher(eventBus);
 
-		final Plugins plugins = new Plugins(this.classLoader, new PluginFactory(), eventBus, this.runtimeOptions);
+		final Plugins plugins = new Plugins(this.classLoader, new PluginFactory(), eventBus, runtimeOptions);
 
 		eventBus.send(new TestRunStarted(eventBus.getTime()));
 		for (CucumberFeature feature : loadedCucumberFeatures) {
