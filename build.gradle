@@ -7,6 +7,7 @@ plugins {
     id "io.spring.dependency-management" version "1.0.7.RELEASE"
     id "com.adarshr.test-logger" version "1.6.0"
     id "com.diffplug.gradle.spotless" version "3.17.0"
+    id 'com.gradle.build-scan' version "2.1" 
 }
 
 repositories {
@@ -40,6 +41,11 @@ spotless {
         trimTrailingWhitespace()
         indentWithTabs()
     }
+}
+
+buildScan {
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    termsOfServiceAgree = 'yes'
 }
 
 dependencies {
