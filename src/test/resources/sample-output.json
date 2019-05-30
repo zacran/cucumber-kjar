@@ -1,0 +1,297 @@
+[
+    {
+        "line": 1,
+        "elements": [
+            {
+                "before": [
+                    {
+                        "result": {
+                            "duration": 1121407,
+                            "status": "passed"
+                        },
+                        "match": {
+                            "location": "CucumberStepDefinitions.setup()"
+                        }
+                    }
+                ],
+                "line": 2,
+                "name": "Fresh and Valid Cabbage Kimchi",
+                "description": "",
+                "id": "validate-rules;fresh-and-valid-cabbage-kimchi",
+                "type": "scenario",
+                "keyword": "Scenario",
+                "steps": [
+                    {
+                        "result": {
+                            "duration": 15775011,
+                            "status": "passed"
+                        },
+                        "line": 3,
+                        "name": "I have the following kimchi:",
+                        "match": {
+                            "location": "CucumberStepDefinitions.i_have_the_following_ingredients(DataTable)"
+                        },
+                        "rows": [
+                            {
+                                "cells": [
+                                    "Ingredients",
+                                    "Age"
+                                ]
+                            },
+                            {
+                                "cells": [
+                                    "Cabbage, Spices, Water",
+                                    "5"
+                                ]
+                            }
+                        ],
+                        "keyword": "Given "
+                    },
+                    {
+                        "result": {
+                            "duration": 201707483,
+                            "status": "passed"
+                        },
+                        "line": 6,
+                        "name": "I attempt to make Kimchi",
+                        "match": {
+                            "location": "CucumberStepDefinitions.i_attempt_to_make_Kimchi()"
+                        },
+                        "keyword": "When "
+                    },
+                    {
+                        "result": {
+                            "duration": 1934925,
+                            "status": "passed"
+                        },
+                        "line": 7,
+                        "name": "The Kimchi will taste great!",
+                        "match": {
+                            "location": "CucumberStepDefinitions.the_Kimchi_will_taste_great()"
+                        },
+                        "keyword": "Then "
+                    }
+                ]
+            },
+            {
+                "before": [
+                    {
+                        "result": {
+                            "duration": 577960,
+                            "status": "passed"
+                        },
+                        "match": {
+                            "location": "CucumberStepDefinitions.setup()"
+                        }
+                    }
+                ],
+                "line": 9,
+                "name": "Fresh and Valid Radish Kimchi",
+                "description": "",
+                "id": "validate-rules;fresh-and-valid-radish-kimchi",
+                "type": "scenario",
+                "keyword": "Scenario",
+                "steps": [
+                    {
+                        "result": {
+                            "duration": 7948357,
+                            "status": "passed"
+                        },
+                        "line": 10,
+                        "name": "I have the following kimchi:",
+                        "match": {
+                            "location": "CucumberStepDefinitions.i_have_the_following_ingredients(DataTable)"
+                        },
+                        "rows": [
+                            {
+                                "cells": [
+                                    "Ingredients",
+                                    "Age"
+                                ]
+                            },
+                            {
+                                "cells": [
+                                    "Radish, Spices, Water",
+                                    "5"
+                                ]
+                            }
+                        ],
+                        "keyword": "Given "
+                    },
+                    {
+                        "result": {
+                            "duration": 236248284,
+                            "status": "passed"
+                        },
+                        "line": 13,
+                        "name": "I attempt to make Kimchi",
+                        "match": {
+                            "location": "CucumberStepDefinitions.i_attempt_to_make_Kimchi()"
+                        },
+                        "keyword": "When "
+                    },
+                    {
+                        "result": {
+                            "duration": 20668,
+                            "status": "passed"
+                        },
+                        "line": 14,
+                        "name": "The Kimchi will taste great!",
+                        "match": {
+                            "location": "CucumberStepDefinitions.the_Kimchi_will_taste_great()"
+                        },
+                        "keyword": "Then "
+                    }
+                ]
+            },
+            {
+                "before": [
+                    {
+                        "result": {
+                            "duration": 76841,
+                            "status": "passed"
+                        },
+                        "match": {
+                            "location": "CucumberStepDefinitions.setup()"
+                        }
+                    }
+                ],
+                "line": 16,
+                "name": "Invalid Ingredients",
+                "description": "",
+                "id": "validate-rules;invalid-ingredients",
+                "type": "scenario",
+                "keyword": "Scenario",
+                "steps": [
+                    {
+                        "result": {
+                            "duration": 7095401,
+                            "status": "passed"
+                        },
+                        "line": 17,
+                        "name": "I have the following kimchi:",
+                        "match": {
+                            "location": "CucumberStepDefinitions.i_have_the_following_ingredients(DataTable)"
+                        },
+                        "rows": [
+                            {
+                                "cells": [
+                                    "Ingredients",
+                                    "Age"
+                                ]
+                            },
+                            {
+                                "cells": [
+                                    "Spices, Water",
+                                    "1"
+                                ]
+                            }
+                        ],
+                        "keyword": "Given "
+                    },
+                    {
+                        "result": {
+                            "duration": 315357047,
+                            "status": "passed"
+                        },
+                        "line": 20,
+                        "name": "I attempt to make Kimchi",
+                        "match": {
+                            "location": "CucumberStepDefinitions.i_attempt_to_make_Kimchi()"
+                        },
+                        "keyword": "When "
+                    },
+                    {
+                        "result": {
+                            "duration": 324874,
+                            "status": "passed"
+                        },
+                        "line": 21,
+                        "name": "It will not be Kimchi!",
+                        "match": {
+                            "location": "CucumberStepDefinitions.it_will_not_be_Kimchi()"
+                        },
+                        "keyword": "Then "
+                    }
+                ]
+            },
+            {
+                "before": [
+                    {
+                        "result": {
+                            "duration": 1137185,
+                            "status": "passed"
+                        },
+                        "match": {
+                            "location": "CucumberStepDefinitions.setup()"
+                        }
+                    }
+                ],
+                "line": 23,
+                "name": "Old Kimchi",
+                "description": "",
+                "id": "validate-rules;old-kimchi",
+                "type": "scenario",
+                "keyword": "Scenario",
+                "steps": [
+                    {
+                        "result": {
+                            "duration": 17842976,
+                            "status": "passed"
+                        },
+                        "line": 24,
+                        "name": "I have the following kimchi:",
+                        "match": {
+                            "location": "CucumberStepDefinitions.i_have_the_following_ingredients(DataTable)"
+                        },
+                        "rows": [
+                            {
+                                "cells": [
+                                    "Ingredients",
+                                    "Age"
+                                ]
+                            },
+                            {
+                                "cells": [
+                                    "Cabbage, Spices, Water",
+                                    "120"
+                                ]
+                            }
+                        ],
+                        "keyword": "Given "
+                    },
+                    {
+                        "result": {
+                            "duration": 312356238,
+                            "status": "passed"
+                        },
+                        "line": 27,
+                        "name": "I attempt to make Kimchi",
+                        "match": {
+                            "location": "CucumberStepDefinitions.i_attempt_to_make_Kimchi()"
+                        },
+                        "keyword": "When "
+                    },
+                    {
+                        "result": {
+                            "duration": 40066,
+                            "status": "passed"
+                        },
+                        "line": 28,
+                        "name": "The Kimchi will not taste great.",
+                        "match": {
+                            "location": "CucumberStepDefinitions.the_Kimchi_will_not_taste_great()"
+                        },
+                        "keyword": "Then "
+                    }
+                ]
+            }
+        ],
+        "name": "Validate Rules",
+        "description": "",
+        "id": "validate-rules",
+        "keyword": "Feature",
+        "uri": "/Users/zach/Kimchi/src/main/resources/CucumberTest.feature",
+        "tags": []
+    }
+]

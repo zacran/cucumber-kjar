@@ -1,0 +1,19 @@
+package com.zacran.kimchi.rules
+
+import com.zacran.kimchi.model.Kimchi;
+import com.zacran.kimchi.model.KimchiRating;
+
+rule "Kimchi must contain cabbage or radish"
+salience 10
+    when
+        $kimchi : Kimchi(ingredients not contains "Cabbage" && ingredients not contains "Radish")
+    then
+        $kimchi.setRating(KimchiRating.NOT_KIMCHI);
+end
+
+rule "Kimchi tastes bad if it is older than 140 days old"
+    when
+        $kimchi : Kimchi(age > 140)
+    then
+        $kimchi.setRating(KimchiRating.TASTES_BAD);
+end

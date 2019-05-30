@@ -1,0 +1,71 @@
+plugins {
+	id "java"
+    id "eclipse"
+    id "maven"
+    id "jacoco"
+    id "org.springframework.boot" version "2.1.5.RELEASE"
+    id "io.spring.dependency-management" version "1.0.7.RELEASE"
+    id "com.adarshr.test-logger" version "1.6.0"
+    id "com.diffplug.gradle.spotless" version "3.17.0"
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+def cucumberVersion = '4.2.0'
+def kieVersion = '7.11.0.Final'
+def springVersion = '2.1.5.RELEASE'
+def swaggerVersion = '2.9.2'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+version = '1.0.0'
+
+jacoco {
+    toolVersion = "0.8.4"
+}
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: '**/cucumber/copied/**')
+        }))
+    }
+}
+
+spotless {
+    java {
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        indentWithTabs()
+    }
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-dependencies:${springVersion}"
+    implementation "org.springframework.boot:spring-boot-starter:${springVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-web:${springVersion}"
+
+    implementation "io.springfox:springfox-swagger2:${swaggerVersion}"
+    implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+
+    implementation "org.projectlombok:lombok"
+    testImplementation "org.projectlombok:lombok"
+    annotationProcessor "org.projectlombok:lombok"
+    testAnnotationProcessor "org.projectlombok:lombok"
+
+    implementation "io.cucumber:cucumber-core:${cucumberVersion}"
+    implementation "io.cucumber:cucumber-java:${cucumberVersion}"
+    implementation "io.cucumber:cucumber-junit:${cucumberVersion}"
+
+    implementation "org.kie:kie-ci:${kieVersion}"
+    implementation "org.kie:kie-api:${kieVersion}"
+    implementation "org.drools:drools-compiler:${kieVersion}"
+    implementation "org.drools:drools-decisiontables:${kieVersion}"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+build.dependsOn jacocoTestReport
+compileJava.dependsOn 'spotlessApply'
