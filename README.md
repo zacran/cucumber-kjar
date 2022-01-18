@@ -1,4 +1,4 @@
-# Project Kimchi
+# Cucumber KJAR
 Building and testing rules on the fly with Drools and Cucumber
 
 [![Build Status](https://travis-ci.org/zacran/project-kimchi.svg?branch=master)](https://travis-ci.org/zacran/project-kimchi.svg?branch=master)
